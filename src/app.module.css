@@ -1,101 +1,109 @@
 .nav,
 .headerContainer,
 .mainContainer {
-    padding: var(--section-padding);
+  padding: var(--section-padding);
 }
 
 .navContent,
 .headerContent,
 .recentProjects {
-    max-width: 1200px;
+  max-width: 1200px;
 }
 
 .sectionTitle {
-    font-size: 1.2rem;
-    font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .paragraph {
-    color: var(--clr-surface-a60);
+  color: var(--clr-surface-a60);
 }
 
 .nav {
-    
-    border-bottom: 2px solid var(--clr-surface-a10);
-    display: flex;
-    width: 100%;
-    justify-content: center;
+  border-bottom: 2px solid var(--clr-surface-a10);
+  display: flex;
+  justify-content: center;
 }
 
 .navContent {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .nav a {
-    text-decoration: none;
-    color: var(--clr-light);
+  text-decoration: none;
+  color: var(--clr-light);
 }
 
 .headerContainer {
-    height: 400px;
-    display: flex;
-    border-bottom: 2px solid var(--clr-surface-a20);
+  height: 400px;
+  display: flex;
+  border-bottom: 2px solid var(--clr-surface-a20);
 }
 
 .headerContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 0 auto;
 }
 
-
 .imageContainer {
-    height: 300px;
-    max-width: 300px;
-    border: 2px solid var(--clr-surface-a20);
-    border-radius: 999px;
-    flex: 1;
+  height: 300px;
+  max-width: 300px;
+  border: 2px solid var(--clr-surface-a20);
+  border-radius: 999px;
+  flex: 1;
 }
 
 .summary {
-    flex: 1;
-    max-width: 600px;
+  flex: 1;
+  max-width: 600px;
 }
 
 .externalLinks {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
 .externalLinks a {
-    width: 25px;
+  width: 25px;
 }
 
 .externalLinks a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .profilePicture {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: 20% 80%;
-    border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 20% 80%;
+  border-radius: inherit;
 }
 
 .mainContainer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .recentProjects {
-    width: 100%;
+  width: 100%;
 }
+
+.recentProjects h2 {
+  margin-bottom: 25px;
+}
+
+/* Project Cards */
+
+.projectCardsContainer {
+  display: flex;
+}
+

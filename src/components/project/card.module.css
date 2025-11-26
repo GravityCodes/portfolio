@@ -1,0 +1,36 @@
+.projectCard {
+  flex-direction: column;
+  width: 400px;
+  height: 350px;
+  border: 2px solid var(--clr-surface-a20);
+  border-radius: 5px;
+}
+
+.projectBottom {
+  padding: 10px;
+}
+
+.projectImgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.projectTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.projectTagsContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.paragraph{
+    composes: paragraph from "../../app.module.css";
+}
