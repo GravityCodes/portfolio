@@ -6,13 +6,16 @@
 
 .navContent,
 .headerContent,
-.recentProjects {
+.mainContainer {
   max-width: 1200px;
 }
 
 .sectionTitle {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--clr-primary-a20);
 }
 
 .paragraph {
@@ -20,7 +23,7 @@
 }
 
 .nav {
-  border-bottom: 2px solid var(--clr-surface-a10);
+  border-bottom: 1px solid var(--clr-surface-a10);
   display: flex;
   justify-content: center;
 }
@@ -39,7 +42,7 @@
 .headerContainer {
   height: 400px;
   display: flex;
-  border-bottom: 2px solid var(--clr-surface-a20);
+  border-bottom: 1px solid var(--clr-surface-a20);
 }
 
 .headerContent {
@@ -53,7 +56,7 @@
 .imageContainer {
   height: 300px;
   max-width: 300px;
-  border: 2px solid var(--clr-surface-a20);
+  border: 1px solid var(--clr-surface-a20);
   border-radius: 999px;
   flex: 1;
 }
@@ -91,19 +94,72 @@
 .mainContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .recentProjects {
   width: 100%;
 }
 
-.recentProjects h2 {
-  margin-bottom: 25px;
-}
-
-/* Project Cards */
+/* Project */
 
 .projectCardsContainer {
   display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
+/* Work History */
+
+.workHistory {
+  padding: var(--section-padding);
+}
+
+.workHistoryContent {
+  display: grid;
+  grid-template-columns: 6fr 1fr 6fr;
+  padding: var(--section-padding);
+}
+
+.timelineCube {
+  width: 20px;
+  height: 20px;
+  background-color: var(--clr-primary-a20);
+  border: 1px solid var(--clr-primary-a10);
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.timelineCube::after{
+  content: "";
+  height: 100px;
+  width: 1px;
+  background:linear-gradient(180deg,var(--clr-primary-a10) 0%, rgba(107, 206, 209, 0) 100%);
+  position: absolute;
+  transform: rotate(-45deg);
+  right: -35.5px;
+  top: 5px;
+}
+
+.timeline {
+  grid-column: 2 / 3;
+  align-self: flex-start;
+  justify-self: center;
+}
+
+.workItem {
+  grid-column: 3 / 4;
+  align-self: center;
+  justify-self: flex-start;
+}
+
+.workItem h6 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.workDescription {
+  max-width: 500px;
+}

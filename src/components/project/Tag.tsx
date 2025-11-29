@@ -1,13 +1,12 @@
 import styles from "./tag.module.css";
 
 interface tagProps {
-    key: number;
     text: string;
 }
 
-const Tag = ({key, text}: tagProps) => {
+const Tag = ({ text}: tagProps) => {
     return (
-        <div key={key} className={`${styles.tag}`}>{text}</div>
+        <div className={`${styles.tag}`}>{text}</div>
     )
 }
 

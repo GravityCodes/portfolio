@@ -185,3 +185,8 @@ body {
   background-color: var(--clr-surface-a0);
   color: var(--clr-light-a0);
 }
+
+p::selection {
+  background-color: var(--clr-primary-a30);
+  color: var(--clr-light-a0);
+}

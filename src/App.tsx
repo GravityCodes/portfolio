@@ -50,7 +50,30 @@ function App() {
               imgUrl="/JohanCodes.png"
               imgAlt="The website's main page"
               tags={["ASTRO", "EXPRESS", "JAVASCRIPT", "NODEJS", "PRISMA", "POSTGRESQL"]} />
+            <Card 
+              title="Photo Tagging App (Where are they?)"
+              paragraph="This project was designed to unify all the skills I’ve gained to date. It’s a photo-tagging application where 
+              users search for and identify characters in an image, similar to a “Where’s Waldo?” game."
+              imgUrl="/WhereAreThey.png"
+              imgAlt="The website's main page"
+              tags={["REACT", "EXPRESS", "JEST", "SUPERTEST", "PRISMA"]}
+            />
           </div>
+        </div>
+        <div className={styles.workHistory}>
+            <h2 className={styles.sectionTitle}>WORK HISTORY</h2>
+            <div className={styles.workHistoryContent}>
+              <div className={styles.timeline}>
+                <div className={styles.timelineCube}></div>
+              </div>
+                <div className={styles.workItem}>
+                    <h6>M&M Construction Landscape and Masonry INC.</h6>
+                    <p className={`${styles.workDescription} ${styles.paragraph}`}>Built a full-stack platform using Next.js, Express, Prisma, and PostgreSQL that increased customer inquiries by 50% and streamlined operations through automated travel-fee calculations and an internal lead management dashboard.</p>
+                </div>
+            </div>
+        </div>
+        <div className={styles.contactMe}>
+            <h2 className={styles.sectionTitle}>CONTACT ME</h2>
         </div>
       </main>
     </div>
