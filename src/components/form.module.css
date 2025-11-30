@@ -1,52 +1,52 @@
 .form {
-    border: 1px solid var(--clr-surface-a20);
-    padding: 20px;
-    width: 600px;
+  border: 1px solid var(--clr-surface-a20);
+  padding: 20px;
+  width: 600px;
 }
 
 .inputField {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .inputField label {
-    font-size: 0.8rem;
-    font-weight: bold;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 .inputField input {
-    background-color: var(--clr-surface-a10);
-    border:1px solid var(--clr-surface-a20);
-    padding: 10px;
-    color: var(--clr-light);
+  background-color: var(--clr-surface-a10);
+  border: 1px solid var(--clr-surface-a20);
+  padding: 10px;
+  color: var(--clr-light);
 }
 
 .inputField textarea {
-    background-color: var(--clr-surface-a10);
-    border:1px solid var(--clr-surface-a20);
-    color: var(--clr-light);
-    resize: vertical;
-    min-height: 150px;
+  background-color: var(--clr-surface-a10);
+  border: 1px solid var(--clr-surface-a20);
+  color: var(--clr-light);
+  resize: vertical;
+  min-height: 150px;
 }
 
 .inputField input:focus,
 .inputField textarea:focus {
-    outline: 1px solid var(--clr-primary-a20);
+  outline: 1px solid var(--clr-primary-a20);
 }
 
 .btn {
-    border: 1px solid var(--clr-surface-a20);
-    padding: 10px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--clr-light);
-    background-color: var(--clr-surface-a0);
-    cursor: pointer;
-    width: 100%;
+  border: 1px solid var(--clr-surface-a20);
+  padding: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--clr-light);
+  background-color: var(--clr-surface-a0);
+  cursor: pointer;
+  width: 100%;
 }
 
 .btn:hover {
-    background-color: var(--clr-primary-a10);
+  background-color: var(--clr-primary-a10);
 }

@@ -45,14 +45,15 @@ function App() {
         <div className={styles.recentProjects}>
           <h2 className={styles.sectionTitle}>RECENT PROJECTS</h2>
           <div className={styles.projectCardsContainer}>
-            <Card 
-              title="Blog Website (JohanCodes)" 
+            <Card
+              title="Blog (JohanCodes)"
               paragraph="The focus of this project was to learn about API's basics and security. Prior to this project I was 
               creating the backend and frontend in one directory but I have split the two for this one and made a API only backend."
               imgUrl="/JohanCodes.png"
               imgAlt="The website's main page"
-              tags={["ASTRO", "EXPRESS", "JAVASCRIPT", "NODEJS", "PRISMA", "POSTGRESQL"]} />
-            <Card 
+              tags={["ASTRO", "EXPRESS", "JAVASCRIPT", "NODEJS", "PRISMA"]}
+            />
+            <Card
               title="Photo Tagging App (Where are they?)"
               paragraph="This project was designed to unify all the skills I’ve gained to date. It’s a photo-tagging application where 
               users search for and identify characters in an image, similar to a “Where’s Waldo?” game."
@@ -60,32 +61,49 @@ function App() {
               imgAlt="The website's main page"
               tags={["REACT", "EXPRESS", "JEST", "SUPERTEST", "PRISMA"]}
             />
+            <Card
+              title="M&M Construction"
+              paragraph="Build the whole frontend and backend. Maintain it using vercel and railway."
+              imgUrl="/MMConstruction.png"
+              imgAlt="The website's main page"
+              tags={["NEXTJS", "REACT", "EXPRESS", "PRISMA"]}
+            />
           </div>
         </div>
         <div className={styles.workHistory}>
-            <h2 className={styles.sectionTitle}>WORK HISTORY</h2>
-            <div className={styles.workHistoryContent}>
-                <div className={styles.timelineCube}></div>
-                <div className={styles.timelineCube}></div>
-                <div className={styles.workItem}>
-                    <div className={styles.workDate}>2021 - CURRENT</div>
-                    <h6>M&M Construction Landscape and Masonry INC.</h6>
-                    <p className={`${styles.workDescription} ${styles.paragraph}`}>Built a full-stack platform using Next.js, Express, Prisma, and PostgreSQL that increased customer inquiries by 50% and streamlined operations through automated travel-fee calculations and an internal lead management dashboard.</p>
-                </div>
-                <div className={styles.workItem}>
-                    <div className={styles.workDate}>2018-2019</div>
-                    <h6>Carbonite</h6>
-                    <p className={`${styles.workDescription} ${styles.paragraph}`}>Worked as a service desk intern. style companies intranet with html and css</p>
-                </div>
+          <h2 className={styles.sectionTitle}>WORK HISTORY</h2>
+          <div className={styles.workHistoryContent}>
+            <div className={styles.timelineCube}></div>
+            <div className={styles.timelineCube}></div>
+            <div className={styles.workItem}>
+              <div className={styles.workDate}>2021 - CURRENT</div>
+              <h6>M&M Construction Landscape and Masonry INC.</h6>
+              <p className={`${styles.workDescription} ${styles.paragraph}`}>
+                Built a full-stack platform using Next.js, Express, Prisma, and
+                PostgreSQL that increased customer inquiries by 50% and
+                streamlined operations through automated travel-fee calculations
+                and an internal lead management dashboard.
+              </p>
             </div>
+            <div className={styles.workItem}>
+              <div className={styles.workDate}>2018-2019</div>
+              <h6>Carbonite</h6>
+              <p className={`${styles.workDescription} ${styles.paragraph}`}>
+                Worked as a service desk intern. style companies intranet with
+                html and css
+              </p>
+            </div>
+          </div>
         </div>
         <div className={styles.contactMe}>
-            <h2 className={styles.sectionTitle}>CONTACT ME</h2>
-            <Form />
+          <h2 className={styles.sectionTitle}>CONTACT ME</h2>
+          <Form />
         </div>
       </main>
       <footer>
-        <div style={{textAlign:"center", padding:"20px"}}>Made With ❤️ by Johan Mesa</div>
+        <div style={{ textAlign: "center", padding: "20px" }}>
+          Made With ❤️ by Johan Mesa
+        </div>
       </footer>
     </div>
   );

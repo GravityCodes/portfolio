@@ -17,19 +17,17 @@
   border-left: 3px dashed var(--clr-primary-a20);
   border-right: 3px dashed var(--clr-primary-a20);
   padding: 0px 10px;
-
 }
 .sectionTitle {
   text-align: center;
   width: fit-content;
   margin: 0 auto;
   margin-bottom: 25px;
-  
 }
 
 .heroLabel {
-    margin: 10px 0px;
-    width: fit-content;
+  margin: 10px 0px;
+  width: fit-content;
 }
 
 .paragraph {
@@ -105,7 +103,6 @@
   border-radius: inherit;
 }
 
-
 .mainContainer {
   display: flex;
   justify-content: center;
@@ -159,10 +156,9 @@
 .timelineCube:nth-child(2) {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
-
 }
 
-.timelineCube::after{
+.timelineCube::after {
   content: "";
   height: 100px;
   width: 1px;
@@ -176,8 +172,12 @@
   background: var(--clr-primary-a10);
 }
 
-.timelineCube:nth-child(2)::after{
-  background:linear-gradient(180deg,var(--clr-primary-a10) 0%, rgba(107, 206, 209, 0) 100%);
+.timelineCube:nth-child(2)::after {
+  background: linear-gradient(
+    180deg,
+    var(--clr-primary-a10) 0%,
+    rgba(107, 206, 209, 0) 100%
+  );
 }
 
 .workItem {
@@ -187,7 +187,7 @@
   position: relative;
 }
 
-.workItem:last-child{
+.workItem:last-child {
   grid-column: 1 / 2;
   text-align: right;
 }
@@ -203,7 +203,6 @@
   position: absolute;
   top: -15px;
 }
-
 
 .workItem h6 {
   font-size: 1.1rem;

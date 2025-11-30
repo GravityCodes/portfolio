@@ -34,14 +34,13 @@
 }
 
 .projectTagsContainer {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-.paragraph{
-    composes: paragraph from "../../app.module.css";
-    margin-bottom: 5px;
+.paragraph {
+  composes: paragraph from "../../app.module.css";
+  margin-bottom: 5px;
 }
-
