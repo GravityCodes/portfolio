@@ -41,6 +41,7 @@
   position: sticky;
   top: 0px;
   background-color: var(--clr-surface-a0);
+  z-index: 2;
 }
 
 .navContent {
@@ -113,14 +114,11 @@
   flex-direction: column;
   margin: 0 auto;
 }
-.headerContainer,
+
 .recentProjects,
 .workHistory,
 .contactMe {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: 100px 0px;
 }
 
 .recentProjects {
