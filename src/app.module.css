@@ -184,12 +184,26 @@
   grid-column: 3 / 4;
   align-self: center;
   justify-self: flex-start;
+  position: relative;
 }
 
 .workItem:last-child{
   grid-column: 1 / 2;
   text-align: right;
 }
+
+.workItem:last-child .workDate {
+  right: 0px;
+}
+
+.workDate {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--clr-surface-a50);
+  position: absolute;
+  top: -15px;
+}
+
 
 .workItem h6 {
   font-size: 1.1rem;
