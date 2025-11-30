@@ -65,12 +65,15 @@ function App() {
         <div className={styles.workHistory}>
             <h2 className={styles.sectionTitle}>WORK HISTORY</h2>
             <div className={styles.workHistoryContent}>
-              <div className={styles.timeline}>
                 <div className={styles.timelineCube}></div>
-              </div>
+                <div className={styles.timelineCube}></div>
                 <div className={styles.workItem}>
                     <h6>M&M Construction Landscape and Masonry INC.</h6>
                     <p className={`${styles.workDescription} ${styles.paragraph}`}>Built a full-stack platform using Next.js, Express, Prisma, and PostgreSQL that increased customer inquiries by 50% and streamlined operations through automated travel-fee calculations and an internal lead management dashboard.</p>
+                </div>
+                <div className={styles.workItem}>
+                    <h6>Carbonite</h6>
+                    <p className={`${styles.workDescription} ${styles.paragraph}`}>Worked as a service desk intern. style companies intranet with html and css</p>
                 </div>
             </div>
         </div>
