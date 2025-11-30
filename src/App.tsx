@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./app.module.css";
 import Card from "./components/project/Card";
+import Form from "./components/Form";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 <img src="/linkedin-logo.svg" alt="Linkedin" />
               </a>
             </div>
+            <div className={styles.heroLabel}>ABOUT ME</div>
             <p className={styles.paragraph}>
               Fullstack developer based in Boston, MA with experience building
               complete web applications from UI to database. Strong problem
@@ -74,8 +76,12 @@ function App() {
         </div>
         <div className={styles.contactMe}>
             <h2 className={styles.sectionTitle}>CONTACT ME</h2>
+            <Form />
         </div>
       </main>
+      <footer>
+        <div style={{textAlign:"center", padding:"20px"}}>Made With ❤️ by Johan Mesa</div>
+      </footer>
     </div>
   );
 }
