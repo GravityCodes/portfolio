@@ -1,9 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./app.module.css";
 import Card from "./components/project/Card";
 import Form from "./components/Form";
 
 function App() {
+  const headerBackground = useRef<HTMLDivElement>(null);
+  const [items, setItems] = useState<Array<React.ReactNode>>([]);
+
+  useEffect(() => {
+    if (headerBackground.current) {
+      const size = headerBackground.current.getBoundingClientRect();
+      const array = [];
+      for (let i = 0; i < size.height / 100; i++) {
+        for (let j = 0; j < Math.ceil(size.width / 100); j++) {
+          array.push(
+            <div
+              key={`${i}${j}`}
+              className={`${styles.box} ${styles.closeBox}`}
+              onMouseEnter={(e) => toggleClass(e.currentTarget)}
+            ></div>,
+          );
+        }
+      }
+      setItems(array);
+    }
+  }, []);
+  const toggleClass = (el: HTMLElement & { _timeout?: number }) => {
+    // if(el._timeout) clearTimeout(el._timeout);
+
+    if (el.classList.contains(styles.openBox)) {
+      el.classList.remove(styles.openBox);
+      el.classList.add(styles.closeBox);
+    } else {
+      el.classList.remove(styles.closeBox);
+      el.classList.add(styles.openBox);
+    }
+    // el.classList.contains(styles.openBox) ? el.classList.add(styles.closeBox)  el.classList el.classList.add(styles.openBox);
+
+    // el._timeout = setTimeout(() => {
+    //   el.classList.remove(styles.openBox);
+    // }, 2000);
+  };
   return (
     <div>
       <nav className={styles.nav}>
@@ -13,6 +50,9 @@ function App() {
         </div>
       </nav>
       <header className={styles.headerContainer}>
+        <div className={styles.headerBackground} ref={headerBackground}>
+          {items}
+        </div>
         <div className={styles.headerContent}>
           <div className={styles.imageContainer}>
             <img

@@ -4,7 +4,6 @@
   width: 400px;
   height: 350px;
   border: 1px solid var(--clr-surface-a20);
-  border-radius: 5px;
 }
 
 .projectBottom {
@@ -23,8 +22,6 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
 
 .projectTitle {
