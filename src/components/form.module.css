@@ -1,7 +1,14 @@
+.formContainer {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .form {
   border: 1px solid var(--clr-surface-a20);
   padding: 20px;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .inputField {
@@ -50,3 +57,4 @@
 .btn:hover {
   background-color: var(--clr-primary-a10);
 }
+

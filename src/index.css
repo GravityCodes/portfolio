@@ -131,6 +131,7 @@ table {
 
 :root {
   --section-padding: 20px;
+  --section-padding-sm: 10px;
   /** Base colors */
   --clr-dark-a0: #000000;
   --clr-light-a0: #ffffff;
@@ -181,9 +182,19 @@ table {
   --clr-info-a20: #92b2e5;
 }
 
+html, 
+a:hover,
+input:hover,
+textarea:hover,
+button:hover,
+label:hover {
+    cursor: none;
+}
+
 body {
   background-color: var(--clr-surface-a0);
   color: var(--clr-light-a0);
+  font-family: "Manrope", sans-serif;
 }
 
 p::selection {

@@ -1,16 +1,66 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef} from "react";
 import styles from "./app.module.css";
 import Card from "./components/project/Card";
 import Form from "./components/Form";
 
 function App() {
+  const dotRef = useRef<HTMLDivElement>(null);
+  const outerDotRef = useRef<HTMLDivElement>(null);
+
+  const viewportPos = useRef({ x: 0, y: 0});
+
+  useEffect(() => {
+    function updateDot(pageX: number, pageY: number){
+      if(!dotRef.current || !outerDotRef.current) return;
+      dotRef.current.style.transform = `translate(${pageX}px, ${pageY}px)`;
+      outerDotRef.current.style.transform = `translate(${pageX}px, ${pageY}px)`;
+    }
+
+    function handlePointerMove(e: PointerEvent) {
+      viewportPos.current.x = e.clientX;
+      viewportPos.current.y = e.clientY;
+
+      updateDot(e.pageX, e.pageY);
+    }
+
+    function handleScroll() {
+      const { x, y} = viewportPos.current;
+
+      const pageX = x + window.scrollX;
+      const pageY = y + window.scrollY;
+
+      updateDot(pageX, pageY);
+    }
+
+    window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
+  const hoverEnter =  () => {
+    if(!dotRef.current) return;
+
+    dotRef.current.classList.add(styles.cursorHover);
+  }
+
+  const hoverLeave = () => {
+    if(!dotRef.current) return;
+
+    dotRef.current.classList.remove(styles.cursorHover)
+  }
 
   return (
     <div>
+      <div className={styles.cursor} ref={dotRef}></div>
+      <div className={styles.outerCursor} ref={outerDotRef}></div>
       <nav className={styles.nav}>
         <div className={styles.navContent}>
-          <a href="#">Johan M. Mesa</a>
-          <a href="#">Resume</a>
+          <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>Johan M. Mesa</a>
+          <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>Resume</a>
         </div>
       </nav>
       <header className={styles.headerContainer}>
@@ -24,10 +74,10 @@ function App() {
           </div>
           <div className={styles.summary}>
             <div className={styles.externalLinks}>
-              <a href="https://github.com/GravityCodes" target="_blank">
+              <a href="https://github.com/GravityCodes" target="_blank" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
                 <img src="/github-logo-white.svg" alt="github" />
               </a>
-              <a href="https://www.linkedin.com/in/johan-mesa/">
+              <a href="https://www.linkedin.com/in/johan-mesa/" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
                 <img src="/linkedin-logo.svg" alt="Linkedin" />
               </a>
             </div>
@@ -47,12 +97,27 @@ function App() {
           <h2 className={styles.sectionTitle}>RECENT PROJECTS</h2>
           <div className={styles.projectCardsContainer}>
             <Card
+              title="M&M Construction"
+              paragraph="Developed the full-stack application (frontend and backend) and currently maintain it on Vercel and Railway."
+              imgUrl="/MMConstruction.png"
+              imgAlt="The website's main page"
+              tags={["NEXTJS", "REACT", "EXPRESS", "PRISMA"]}
+              repo=""
+              website="https://www.mmconstructionlm.com/"
+              onMouseEnterFunc={hoverEnter}
+              onMouseLeaveFunc={hoverLeave}
+            />
+            <Card
               title="Blog (JohanCodes)"
               paragraph="The focus of this project was to learn about API's basics and security. Prior to this project I was 
               creating the backend and frontend in one directory but I have split the two for this one and made a API only backend."
               imgUrl="/JohanCodes.png"
               imgAlt="The website's main page"
               tags={["ASTRO", "EXPRESS", "JAVASCRIPT", "NODEJS", "PRISMA"]}
+              repo="https://github.com/GravityCodes/blog-back-end"
+              website="https://blog.johanmesa.com/"
+              onMouseEnterFunc={hoverEnter}
+              onMouseLeaveFunc={hoverLeave}
             />
             <Card
               title="Photo Tagging App (Where are they?)"
@@ -61,13 +126,10 @@ function App() {
               imgUrl="/WhereAreThey.png"
               imgAlt="The website's main page"
               tags={["REACT", "EXPRESS", "JEST", "SUPERTEST", "PRISMA"]}
-            />
-            <Card
-              title="M&M Construction"
-              paragraph="Build the whole frontend and backend. Maintain it using vercel and railway."
-              imgUrl="/MMConstruction.png"
-              imgAlt="The website's main page"
-              tags={["NEXTJS", "REACT", "EXPRESS", "PRISMA"]}
+              repo="https://github.com/GravityCodes/photo-tagging-app-back-end"
+              website="https://wherearethey.johanmesa.com/"
+              onMouseEnterFunc={hoverEnter}
+              onMouseLeaveFunc={hoverLeave}
             />
           </div>
         </div>
@@ -98,7 +160,10 @@ function App() {
         </div>
         <div className={styles.contactMe}>
           <h2 className={styles.sectionTitle}>CONTACT ME</h2>
-          <Form />
+          <Form
+            onMouseEnterFunc={hoverEnter}
+            onMouseLeaveFunc={hoverLeave}
+          />
         </div>
       </main>
       <footer>
