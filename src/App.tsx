@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./app.module.css";
 import Card from "./components/project/Card";
 import Form from "./components/Form";
@@ -7,11 +7,11 @@ function App() {
   const dotRef = useRef<HTMLDivElement>(null);
   const outerDotRef = useRef<HTMLDivElement>(null);
 
-  const viewportPos = useRef({ x: 0, y: 0});
+  const viewportPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    function updateDot(pageX: number, pageY: number){
-      if(!dotRef.current || !outerDotRef.current) return;
+    function updateDot(pageX: number, pageY: number) {
+      if (!dotRef.current || !outerDotRef.current) return;
       dotRef.current.style.transform = `translate(${pageX}px, ${pageY}px)`;
       outerDotRef.current.style.transform = `translate(${pageX}px, ${pageY}px)`;
     }
@@ -24,7 +24,7 @@ function App() {
     }
 
     function handleScroll() {
-      const { x, y} = viewportPos.current;
+      const { x, y } = viewportPos.current;
 
       const pageX = x + window.scrollX;
       const pageY = y + window.scrollY;
@@ -38,20 +38,20 @@ function App() {
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("scroll", handleScroll);
-    }
+    };
   }, []);
 
-  const hoverEnter =  () => {
-    if(!dotRef.current) return;
+  const hoverEnter = () => {
+    if (!dotRef.current) return;
 
     dotRef.current.classList.add(styles.cursorHover);
-  }
+  };
 
   const hoverLeave = () => {
-    if(!dotRef.current) return;
+    if (!dotRef.current) return;
 
-    dotRef.current.classList.remove(styles.cursorHover)
-  }
+    dotRef.current.classList.remove(styles.cursorHover);
+  };
 
   return (
     <div>
@@ -59,8 +59,12 @@ function App() {
       <div className={styles.outerCursor} ref={outerDotRef}></div>
       <nav className={styles.nav}>
         <div className={styles.navContent}>
-          <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>Johan M. Mesa</a>
-          <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>Resume</a>
+          <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+            Johan M. Mesa
+          </a>
+          <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+            Resume
+          </a>
         </div>
       </nav>
       <header className={styles.headerContainer}>
@@ -74,10 +78,19 @@ function App() {
           </div>
           <div className={styles.summary}>
             <div className={styles.externalLinks}>
-              <a href="https://github.com/GravityCodes" target="_blank" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+              <a
+                href="https://github.com/GravityCodes"
+                target="_blank"
+                onMouseEnter={hoverEnter}
+                onMouseLeave={hoverLeave}
+              >
                 <img src="/github-logo-white.svg" alt="github" />
               </a>
-              <a href="https://www.linkedin.com/in/johan-mesa/" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+              <a
+                href="https://www.linkedin.com/in/johan-mesa/"
+                onMouseEnter={hoverEnter}
+                onMouseLeave={hoverLeave}
+              >
                 <img src="/linkedin-logo.svg" alt="Linkedin" />
               </a>
             </div>
@@ -160,10 +173,7 @@ function App() {
         </div>
         <div className={styles.contactMe}>
           <h2 className={styles.sectionTitle}>CONTACT ME</h2>
-          <Form
-            onMouseEnterFunc={hoverEnter}
-            onMouseLeaveFunc={hoverLeave}
-          />
+          <Form onMouseEnterFunc={hoverEnter} onMouseLeaveFunc={hoverLeave} />
         </div>
       </main>
       <footer>

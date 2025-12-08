@@ -182,13 +182,13 @@ table {
   --clr-info-a20: #92b2e5;
 }
 
-html, 
+html,
 a:hover,
 input:hover,
 textarea:hover,
 button:hover,
 label:hover {
-    cursor: none;
+  cursor: none;
 }
 
 body {

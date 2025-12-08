@@ -22,7 +22,7 @@ const Card = ({
   repo,
   website,
   onMouseEnterFunc,
-  onMouseLeaveFunc
+  onMouseLeaveFunc,
 }: CardProps) => {
   return (
     <div className={styles.projectCardContainer}>
@@ -46,13 +46,23 @@ const Card = ({
           </div>
         </div>
         <div className={styles.back}>
-          <a href={repo} target="_blank" onMouseEnter={onMouseEnterFunc} onMouseLeave={onMouseLeaveFunc}>
+          <a
+            href={repo}
+            target="_blank"
+            onMouseEnter={onMouseEnterFunc}
+            onMouseLeave={onMouseLeaveFunc}
+          >
             <img
               src="/github-logo-white.svg"
               alt="link to this website's repo"
             />
           </a>
-          <a href={website} target="_blank" onMouseEnter={onMouseEnterFunc} onMouseLeave={onMouseLeaveFunc}>
+          <a
+            href={website}
+            target="_blank"
+            onMouseEnter={onMouseEnterFunc}
+            onMouseLeave={onMouseLeaveFunc}
+          >
             <img src="/external-link-white.svg" alt="Link to this website" />
           </a>
         </div>

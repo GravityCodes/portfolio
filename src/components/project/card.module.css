@@ -33,7 +33,7 @@
 }
 
 .back {
-  transform: rotateY(180deg) ;
+  transform: rotateY(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,6 @@
   border: 1px solid var(--clr-surface-a20);
   box-shadow: 0px 5px 5px var(--clr-dark-a0);
 }
-
 
 .back img {
   height: 50px;
@@ -83,10 +82,10 @@
   margin-bottom: 5px;
 }
 
-@media (max-width: 964px){
+@media (max-width: 964px) {
   .projectTitle {
     font-size: 1rem;
-     margin-bottom: 5px;
+    margin-bottom: 5px;
   }
 
   .projectCardContainer {
