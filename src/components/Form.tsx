@@ -11,33 +11,30 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
   const { pending } = useFormStatus();
   const [error, setError] = useState(false);
   const [sent, setSent] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
 
-  const submitForm = async (formData: object) => {
+  const submitForm = async () => {
     try {
       const response = await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ name, email, phoneNumber, message }),
       });
 
       if (!response.ok) {
         throw new Error(`Reponse status: ${response.status}`);
       }
-
-      const data = await response.json();
-
-      if (data.success) {
-        setSent(true);
-        setError(false);
-      } else {
-        setError(true);
-        setSent(false);
-      }
+      setSent(true);
+      setError(false);
     } catch (error) {
       console.log(error);
       setError(true);
+      setSent(false);
     }
   };
 
@@ -50,6 +47,8 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
             type="text"
             id="name"
             name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             onMouseEnter={onMouseEnterFunc}
             onMouseLeave={onMouseLeaveFunc}
           />
@@ -60,6 +59,20 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
             type="email"
             id="email"
             name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onMouseEnter={onMouseEnterFunc}
+            onMouseLeave={onMouseLeaveFunc}
+          />
+        </div>
+        <div className={styles.inputField}>
+          <label htmlFor="tel">PHONE NUMBER</label>
+          <input
+            type="tel"
+            id="tel"
+            name="tel"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
             onMouseEnter={onMouseEnterFunc}
             onMouseLeave={onMouseLeaveFunc}
           />
@@ -69,6 +82,8 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
           <textarea
             id="message"
             name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             onMouseEnter={onMouseEnterFunc}
             onMouseLeave={onMouseLeaveFunc}
           />

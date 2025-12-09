@@ -62,7 +62,7 @@ function App() {
           <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
             Johan M. Mesa
           </a>
-          <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+          <a href="" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
             Resume
           </a>
         </div>
