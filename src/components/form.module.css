@@ -28,6 +28,7 @@
   border: 1px solid var(--clr-surface-a20);
   padding: 10px;
   color: var(--clr-light);
+  transition: outline 0.5s;
 }
 
 .inputField textarea {

@@ -1,3 +1,7 @@
+.scrollIndicator {
+  background-color: var(--clr-primary-a0);
+}
+
 .cursor {
   height: 16px;
   width: 16px;

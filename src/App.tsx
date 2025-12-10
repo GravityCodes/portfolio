@@ -2,12 +2,15 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./app.module.css";
 import Card from "./components/project/Card";
 import Form from "./components/Form";
+import { motion, useScroll } from "motion/react"
 
 function App() {
   const dotRef = useRef<HTMLDivElement>(null);
   const outerDotRef = useRef<HTMLDivElement>(null);
-
   const viewportPos = useRef({ x: 0, y: 0 });
+
+  // Motion
+  const { scrollYProgress } = useScroll()
 
   useEffect(() => {
     function updateDot(pageX: number, pageY: number) {
@@ -54,7 +57,22 @@ function App() {
   };
 
   return (
+    
     <div>
+       <motion.div
+                id="scroll-indicator"
+                className={styles.scrollIndicator}
+                style={{
+                    scaleX: scrollYProgress,
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: 2,
+                    originX: 0,
+                    zIndex: 4
+                }}
+            />
       <div className={styles.cursor} ref={dotRef}></div>
       <div className={styles.outerCursor} ref={outerDotRef}></div>
       <nav className={styles.nav}>
