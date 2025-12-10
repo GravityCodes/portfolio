@@ -78,16 +78,19 @@ function App() {
       <nav className={styles.nav}>
         <div className={styles.navContent}>
           <motion.a
-           whileHover={{
-            scale: 1.5,
-            color: "#e84343",
-           }}
-           href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+            whileHover={{
+              scale: 1.5,
+              color: "#e84343",
+            }}
+            href="#"
+            onMouseEnter={hoverEnter}
+            onMouseLeave={hoverLeave}
+          >
             Johan M. Mesa
           </motion.a>
           <motion.a
             whileHover={{
-              scale: 1.5
+              scale: 1.5,
             }}
             href="/resume.pdf"
             target="_blank"
@@ -101,18 +104,20 @@ function App() {
       <header className={styles.headerContainer}>
         <div className={styles.headerContent}>
           <div className={styles.imageContainer}>
+            <div className={styles.backBox}></div>
             <img
               className={styles.profilePicture}
               src="/profile_Picture.jpg"
               alt="Picture of Johan Mesa"
             />
+            <div className={styles.frontBox}></div>
           </div>
           <div className={styles.summary}>
             <div className={styles.externalLinks}>
               <motion.a
                 whileHover={{
-                  scale: 1.5
-                }}  
+                  scale: 1.5,
+                }}
                 href="https://github.com/GravityCodes"
                 target="_blank"
                 onMouseEnter={hoverEnter}
@@ -122,8 +127,8 @@ function App() {
               </motion.a>
               <motion.a
                 whileHover={{
-                  scale: 1.5
-                }} 
+                  scale: 1.5,
+                }}
                 href="https://www.linkedin.com/in/johan-mesa/"
                 onMouseEnter={hoverEnter}
                 onMouseLeave={hoverLeave}

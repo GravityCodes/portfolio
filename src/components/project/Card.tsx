@@ -1,6 +1,6 @@
 import styles from "./card.module.css";
 import Tag from "./Tag";
-import {motion} from "motion/react";
+import { motion } from "motion/react";
 
 interface CardProps {
   title: string;
@@ -50,7 +50,7 @@ const Card = ({
           <motion.a
             whileHover={{
               scale: 1.5,
-            }}  
+            }}
             href={repo}
             target="_blank"
             onMouseEnter={onMouseEnterFunc}
@@ -64,7 +64,7 @@ const Card = ({
           <motion.a
             whileHover={{
               scale: 1.5,
-            }}  
+            }}
             href={website}
             target="_blank"
             onMouseEnter={onMouseEnterFunc}

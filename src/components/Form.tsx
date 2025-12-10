@@ -1,7 +1,7 @@
 import styles from "./form.module.css";
 import { useFormStatus } from "react-dom";
 import { useState } from "react";
-import {motion} from "motion/react";
+import { motion } from "motion/react";
 
 interface formProps {
   onMouseEnterFunc: () => void;
@@ -92,10 +92,10 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
         <motion.button
           whileHover={{
             scale: 1.04,
-            transition: {duration: 0.2}
+            transition: { duration: 0.2 },
           }}
           whileTap={{
-            scale: 0.98
+            scale: 0.98,
           }}
           type="submit"
           disabled={pending}
