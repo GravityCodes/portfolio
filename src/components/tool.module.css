@@ -1,0 +1,25 @@
+.toolContainer {
+  height: 48px;
+  width: 48px;
+  border: 2px solid var(--clr-surface-a20);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  transition: box-shadow 3s;
+}
+
+.toolContainer:hover {
+  transition-duration: 0s;
+}
+
+.toolContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .toolContainer {
+    height: 32px;
+    width: 32px;
+  }
+}

@@ -132,6 +132,7 @@ table {
 :root {
   --section-padding: 20px;
   --section-padding-sm: 10px;
+  --border-radius: 5px;
   /** Base colors */
   --clr-dark-a0: #000000;
   --clr-light-a0: #ffffff;

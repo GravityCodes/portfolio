@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./app.module.css";
 import Card from "./components/project/Card";
+import Tool from "./components/Tool";
 import Form from "./components/Form";
-import { motion, useScroll } from "motion/react"
+import { motion, useScroll } from "motion/react";
 
 function App() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -10,7 +11,7 @@ function App() {
   const viewportPos = useRef({ x: 0, y: 0 });
 
   // Motion
-  const { scrollYProgress } = useScroll()
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     function updateDot(pageX: number, pageY: number) {
@@ -57,22 +58,21 @@ function App() {
   };
 
   return (
-    
     <div>
-       <motion.div
-                id="scroll-indicator"
-                className={styles.scrollIndicator}
-                style={{
-                    scaleX: scrollYProgress,
-                    position: "fixed",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: 2,
-                    originX: 0,
-                    zIndex: 4
-                }}
-            />
+      <motion.div
+        id="scroll-indicator"
+        className={styles.scrollIndicator}
+        style={{
+          scaleX: scrollYProgress,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 2,
+          originX: 0,
+          zIndex: 4,
+        }}
+      />
       <div className={styles.cursor} ref={dotRef}></div>
       <div className={styles.outerCursor} ref={outerDotRef}></div>
       <nav className={styles.nav}>
@@ -80,7 +80,12 @@ function App() {
           <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
             Johan M. Mesa
           </a>
-          <a href="/resume.pdf" target="_blank" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            onMouseEnter={hoverEnter}
+            onMouseLeave={hoverLeave}
+          >
             Resume
           </a>
         </div>
@@ -186,6 +191,169 @@ function App() {
                 Worked as a service desk intern. style companies intranet with
                 html and css
               </p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.technologies}>
+          <h2 className={styles.sectionTitle}>TECHNOLOGIES</h2>
+          <div className={styles.technologiesContainer}>
+            <div className={styles.technology}>
+              <h3>FRONTEND</h3>
+              <div className={styles.toolsContainer}>
+                <Tool
+                  title="Javascript"
+                  imgUrl="/icons/javascript.svg"
+                  alt="javascript logo"
+                  color="#F7DF1E"
+                />
+                <Tool
+                  title="React"
+                  imgUrl="/icons/react.svg"
+                  alt="react logo"
+                  color="#00D8FF"
+                />
+                <Tool
+                  title="Html"
+                  imgUrl="/icons/html.svg"
+                  alt="html logo"
+                  color="#F16529"
+                />
+                <Tool
+                  title="Css"
+                  imgUrl="/icons/css.svg"
+                  alt="css logo"
+                  color="#33AADD"
+                />
+                <Tool
+                  title="NextJs"
+                  imgUrl="/icons/nextjs.svg"
+                  alt="next js logo"
+                  color="#ffffff"
+                />
+                <Tool
+                  title="Vite"
+                  imgUrl="/icons/vite.png"
+                  alt="vite logo"
+                  color="#A94CFE"
+                />
+                <Tool
+                  title="Astro"
+                  imgUrl="/icons/astro.png"
+                  alt="astro build logo"
+                  color="#201779"
+                />
+              </div>
+            </div>
+            <div className={styles.technology}>
+              <h3>TEST</h3>
+              <div className={styles.toolsContainer}>
+                <div className={styles.toolsContainer}>
+                  <Tool
+                    title="Jest"
+                    imgUrl="/icons/jest.svg"
+                    alt="Jest logo"
+                    color="#C63D14"
+                  />
+                  <Tool
+                    title="React Testing Library"
+                    imgUrl="/icons/reactTestingLibrary.png"
+                    alt="reat testing library logo"
+                    color="#BE2525"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className={styles.technology}>
+              <h3>BACKEND</h3>
+              <div className={styles.toolsContainer}>
+                <Tool
+                  title="NodeJs"
+                  imgUrl="/icons/nodejs.png"
+                  alt="node js logo"
+                  color="#539E43"
+                />
+                <Tool
+                  title="Express"
+                  imgUrl="/icons/express.png"
+                  alt="express logo"
+                  color="#ffffff"
+                />
+              </div>
+            </div>
+            <div className={styles.technology}>
+              <h3>DEVOPS & CLOUD</h3>
+              <div className={styles.toolsContainer}>
+                <Tool
+                  title="Vercel"
+                  imgUrl="/icons/vercel.png"
+                  alt="vercel logo"
+                  color="#ffffff"
+                />
+                <Tool
+                  title="Docker"
+                  imgUrl="/icons/docker.png"
+                  alt="docker logo"
+                  color="#2597EE"
+                />
+              </div>
+            </div>
+            <div className={styles.technology}>
+              <h3>DATABASE</h3>
+              <div className={styles.toolsContainer}>
+                <Tool
+                  title="Prisma"
+                  imgUrl="/icons/prisma.png"
+                  alt="prisma logo"
+                  color="#16A394"
+                />
+                <Tool
+                  title="Postgresql"
+                  imgUrl="/icons/postgresql.svg"
+                  alt="postgresql logo"
+                  color="#336791"
+                />
+                <Tool
+                  title="SQL"
+                  imgUrl="/icons/sql.svg"
+                  alt="sql logo"
+                  color="#1A5BBA"
+                />
+              </div>
+            </div>
+            <div className={styles.technology}>
+              <h3>TOOLS AND WORKFLOW</h3>
+              <div className={styles.toolsContainer}>
+                <Tool
+                  title="Git"
+                  imgUrl="/icons/git.png"
+                  alt="git logo"
+                  color="#F15030"
+                />
+                <Tool
+                  title="Github"
+                  imgUrl="github-logo-white.svg"
+                  alt="github logo"
+                  color="#ffffff"
+                />
+                <Tool
+                  title="Postman"
+                  imgUrl="/icons/postman.svg"
+                  alt="postman logo"
+                  color="#FF6C37"
+                />
+                <Tool
+                  title="NPM"
+                  imgUrl="/icons/npm.svg"
+                  alt="npm logo"
+                  color="#FF6C37"
+                />
+                <Tool
+                  title="VScode"
+                  imgUrl="/icons/vscode.png"
+                  alt="vscode logo"
+                  color="#1DACF2"
+                />
+              </div>
             </div>
           </div>
         </div>

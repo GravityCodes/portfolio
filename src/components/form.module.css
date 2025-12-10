@@ -6,6 +6,7 @@
 }
 .form {
   border: 1px solid var(--clr-surface-a20);
+  border-radius: var(--border-radius);
   padding: 20px;
   width: 100%;
   max-width: 600px;
@@ -26,6 +27,7 @@
 .inputField input {
   background-color: var(--clr-surface-a10);
   border: 1px solid var(--clr-surface-a20);
+  border-radius: var(--border-radius);
   padding: 10px;
   color: var(--clr-light);
   transition: outline 0.5s;
@@ -34,6 +36,7 @@
 .inputField textarea {
   background-color: var(--clr-surface-a10);
   border: 1px solid var(--clr-surface-a20);
+  border-radius: var(--border-radius);
   color: var(--clr-light);
   resize: vertical;
   min-height: 150px;
@@ -46,6 +49,7 @@
 
 .btn {
   border: 1px solid var(--clr-surface-a20);
+  border-radius: var(--border-radius);
   padding: 10px;
   font-size: 0.8rem;
   font-weight: bold;
