@@ -51,6 +51,15 @@
   max-width: 1200px;
 }
 
+.navContent a {
+  padding: 8px;
+  border-radius: var(--border-radius);
+}
+
+.navContent a:hover {
+  background-color: var(--clr-surface-a10);
+}
+
 .heroLabel,
 .sectionTitle {
   font-weight: bold;

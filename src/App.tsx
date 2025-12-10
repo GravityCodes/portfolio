@@ -77,17 +77,25 @@ function App() {
       <div className={styles.outerCursor} ref={outerDotRef}></div>
       <nav className={styles.nav}>
         <div className={styles.navContent}>
-          <a href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+          <motion.a
+           whileHover={{
+            scale: 1.5,
+            color: "#e84343",
+           }}
+           href="#" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
             Johan M. Mesa
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{
+              scale: 1.5
+            }}
             href="/resume.pdf"
             target="_blank"
             onMouseEnter={hoverEnter}
             onMouseLeave={hoverLeave}
           >
             Resume
-          </a>
+          </motion.a>
         </div>
       </nav>
       <header className={styles.headerContainer}>
@@ -101,21 +109,27 @@ function App() {
           </div>
           <div className={styles.summary}>
             <div className={styles.externalLinks}>
-              <a
+              <motion.a
+                whileHover={{
+                  scale: 1.5
+                }}  
                 href="https://github.com/GravityCodes"
                 target="_blank"
                 onMouseEnter={hoverEnter}
                 onMouseLeave={hoverLeave}
               >
                 <img src="/github-logo-white.svg" alt="github" />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{
+                  scale: 1.5
+                }} 
                 href="https://www.linkedin.com/in/johan-mesa/"
                 onMouseEnter={hoverEnter}
                 onMouseLeave={hoverLeave}
               >
                 <img src="/linkedin-logo.svg" alt="Linkedin" />
-              </a>
+              </motion.a>
             </div>
             <div className={styles.heroLabel}>ABOUT ME</div>
             <p className={styles.paragraph}>

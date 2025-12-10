@@ -1,5 +1,6 @@
 import styles from "./card.module.css";
 import Tag from "./Tag";
+import {motion} from "motion/react";
 
 interface CardProps {
   title: string;
@@ -46,7 +47,10 @@ const Card = ({
           </div>
         </div>
         <div className={styles.back}>
-          <a
+          <motion.a
+            whileHover={{
+              scale: 1.5,
+            }}  
             href={repo}
             target="_blank"
             onMouseEnter={onMouseEnterFunc}
@@ -56,15 +60,18 @@ const Card = ({
               src="/github-logo-white.svg"
               alt="link to this website's repo"
             />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{
+              scale: 1.5,
+            }}  
             href={website}
             target="_blank"
             onMouseEnter={onMouseEnterFunc}
             onMouseLeave={onMouseLeaveFunc}
           >
             <img src="/external-link-white.svg" alt="Link to this website" />
-          </a>
+          </motion.a>
         </div>
       </div>
     </div>
