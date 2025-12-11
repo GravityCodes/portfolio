@@ -77,3 +77,13 @@
   font-weight: bold;
   text-align: center;
 }
+
+.contactOptions {
+  text-align: center;
+  border-top: 2px solid var(--clr-surface-a20);
+  padding: 20px;
+}
+
+.contactOptions a {
+  color: var(--clr-primary-a20);
+}

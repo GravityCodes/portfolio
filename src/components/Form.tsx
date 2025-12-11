@@ -117,6 +117,26 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
           ""
         )}
         {sent ? <p className={styles.sent}>Message has been sent!</p> : ""}
+        <div className={styles.contactOptions}>
+          <p>
+            Reach out directly via{" "}
+            <a
+              href="mailto:Johan.mesa2001@gmail.com"
+              onMouseEnter={onMouseEnterFunc}
+              onMouseLeave={onMouseLeaveFunc}
+            >
+              email
+            </a>{" "}
+            or{" "}
+            <a
+              href="tel:8579301820"
+              onMouseEnter={onMouseEnterFunc}
+              onMouseLeave={onMouseLeaveFunc}
+            >
+              phone
+            </a>
+          </p>
+        </div>
       </form>
     </div>
   );
