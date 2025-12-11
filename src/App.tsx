@@ -91,6 +91,7 @@ function App() {
           <motion.a
             whileHover={{
               scale: 1.5,
+              rotate: -2,
             }}
             href="/resume.pdf"
             target="_blank"
@@ -98,6 +99,7 @@ function App() {
             onMouseLeave={hoverLeave}
           >
             Resume
+            <img src="/external-link-white.svg" alt="" />
           </motion.a>
         </div>
       </nav>
@@ -217,7 +219,13 @@ function App() {
           <h2 className={styles.sectionTitle}>TECHNOLOGIES</h2>
           <div className={styles.technologiesContainer}>
             <div className={styles.technology}>
-              <h3>FRONTEND</h3>
+              <div className={styles.titleWithIcon}>
+                <img
+                  src="/icons/technologies/frontend-white.svg"
+                  alt="frontend icon"
+                />
+                <h3>FRONTEND</h3>
+              </div>
               <div className={styles.toolsContainer}>
                 <Tool
                   title="Javascript"
@@ -264,7 +272,10 @@ function App() {
               </div>
             </div>
             <div className={styles.technology}>
-              <h3>TEST</h3>
+              <div className={styles.titleWithIcon}>
+                <img src="/icons/technologies/test-white.svg" alt="test icon" />
+                <h3>TEST</h3>
+              </div>
               <div className={styles.toolsContainer}>
                 <div className={styles.toolsContainer}>
                   <Tool
@@ -283,7 +294,13 @@ function App() {
               </div>
             </div>
             <div className={styles.technology}>
-              <h3>BACKEND</h3>
+              <div className={styles.titleWithIcon}>
+                <img
+                  src="/icons/technologies/backend-white.svg"
+                  alt="backend icon"
+                />
+                <h3>BACKEND</h3>
+              </div>
               <div className={styles.toolsContainer}>
                 <Tool
                   title="NodeJs"
@@ -300,7 +317,13 @@ function App() {
               </div>
             </div>
             <div className={styles.technology}>
-              <h3>DEVOPS & CLOUD</h3>
+              <div className={styles.titleWithIcon}>
+                <img
+                  src="/icons/technologies/cloud-white.svg"
+                  alt="devops and cloud icon"
+                />
+                <h3>DEVOPS & CLOUD</h3>
+              </div>
               <div className={styles.toolsContainer}>
                 <Tool
                   title="Vercel"
@@ -317,7 +340,13 @@ function App() {
               </div>
             </div>
             <div className={styles.technology}>
-              <h3>DATABASE</h3>
+              <div className={styles.titleWithIcon}>
+                <img
+                  src="/icons/technologies/database-white.svg"
+                  alt="databse icon"
+                />
+                <h3>DATABASE</h3>
+              </div>
               <div className={styles.toolsContainer}>
                 <Tool
                   title="Prisma"
@@ -340,7 +369,13 @@ function App() {
               </div>
             </div>
             <div className={styles.technology}>
-              <h3>TOOLS AND WORKFLOW</h3>
+              <div className={styles.titleWithIcon}>
+                <img
+                  src="/icons/technologies/tools-white.svg"
+                  alt="tools icon"
+                />
+                <h3>TOOLS AND WORKFLOW</h3>
+              </div>
               <div className={styles.toolsContainer}>
                 <Tool
                   title="Git"
