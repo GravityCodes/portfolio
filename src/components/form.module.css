@@ -40,6 +40,7 @@
   color: var(--clr-light);
   resize: vertical;
   min-height: 150px;
+  transition: outline 0.5s;
 }
 
 .inputField input:focus,

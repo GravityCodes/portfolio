@@ -52,6 +52,7 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
             onChange={(e) => setName(e.target.value)}
             onMouseEnter={onMouseEnterFunc}
             onMouseLeave={onMouseLeaveFunc}
+            required
           />
         </div>
         <div className={styles.inputField}>
@@ -64,6 +65,7 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
             onChange={(e) => setEmail(e.target.value)}
             onMouseEnter={onMouseEnterFunc}
             onMouseLeave={onMouseLeaveFunc}
+            required
           />
         </div>
         <div className={styles.inputField}>
@@ -76,6 +78,7 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
             onChange={(e) => setPhoneNumber(e.target.value)}
             onMouseEnter={onMouseEnterFunc}
             onMouseLeave={onMouseLeaveFunc}
+            required
           />
         </div>
         <div className={styles.inputField}>
@@ -87,6 +90,7 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
             onChange={(e) => setMessage(e.target.value)}
             onMouseEnter={onMouseEnterFunc}
             onMouseLeave={onMouseLeaveFunc}
+            required
           />
         </div>
         <motion.button
