@@ -416,7 +416,7 @@ function App() {
           <Form onMouseEnterFunc={hoverEnter} onMouseLeaveFunc={hoverLeave} />
         </div>
       </main>
-      <footer>
+      <footer className={styles.footer}>
         <div style={{ textAlign: "center", padding: "20px" }}>
           Made With ❤️ by Johan Mesa
         </div>

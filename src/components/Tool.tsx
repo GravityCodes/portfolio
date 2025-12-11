@@ -10,15 +10,26 @@ interface toolProps {
 
 const Tool = ({ imgUrl, alt, color, title }: toolProps) => {
   return (
-    <motion.div
-      title={title}
-      className={styles.toolContainer}
-      whileHover={{
-        boxShadow: `0px 0px 20px ${color}`,
-      }}
-    >
+    <div title={title} className={styles.toolContainer}>
+      <motion.div
+        title={title}
+        style={{
+          boxShadow: `0px 0px 20px ${color}`,
+          opacity: 0,
+          height: "100%",
+          width: "100%",
+          position: "absolute",
+          left: 0,
+          top: 0,
+        }}
+        whileHover={{
+          opacity: 1,
+          transition: { duration: 0.1 },
+        }}
+        transition={{ duration: 4 }}
+      ></motion.div>
       <img src={imgUrl} alt={alt} />
-    </motion.div>
+    </div>
   );
 };
 
