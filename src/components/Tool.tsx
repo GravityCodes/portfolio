@@ -10,7 +10,13 @@ interface toolProps {
 
 const Tool = ({ imgUrl, alt, color, title }: toolProps) => {
   return (
-    <div title={title} className={styles.toolContainer}>
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      title={title}
+      className={styles.toolContainer}
+    >
       <motion.div
         title={title}
         style={{
@@ -29,7 +35,7 @@ const Tool = ({ imgUrl, alt, color, title }: toolProps) => {
         transition={{ duration: 4 }}
       ></motion.div>
       <img src={imgUrl} alt={alt} />
-    </div>
+    </motion.div>
   );
 };
 

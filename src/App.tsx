@@ -79,10 +79,12 @@ function App() {
         <div className={styles.navContent}>
           <motion.a
             whileHover={{
-              scale: 1.5,
+              scale: 1.1,
               color: "#e84343",
             }}
-            href="#"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            href="/"
             onMouseEnter={hoverEnter}
             onMouseLeave={hoverLeave}
           >
@@ -90,9 +92,12 @@ function App() {
           </motion.a>
           <motion.a
             whileHover={{
-              scale: 1.5,
+              scale: 1.1,
               rotate: -2,
             }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
             href="/resume.pdf"
             target="_blank"
             onMouseEnter={hoverEnter}
@@ -105,7 +110,11 @@ function App() {
       </nav>
       <header className={styles.headerContainer}>
         <div className={styles.headerContent}>
-          <div className={styles.imageContainer}>
+          <motion.div
+            initial={{ opacity: 0, translateX: -100 }}
+            animate={{ opacity: 1, translateX: 0 }}
+            className={styles.imageContainer}
+          >
             <div className={styles.backBox}></div>
             <img
               className={styles.profilePicture}
@@ -113,8 +122,12 @@ function App() {
               alt="Picture of Johan Mesa"
             />
             <div className={styles.frontBox}></div>
-          </div>
-          <div className={styles.summary}>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, translateX: 100 }}
+            animate={{ opacity: 1, translateX: 0 }}
+            className={styles.summary}
+          >
             <div className={styles.externalLinks}>
               <motion.a
                 whileHover={{
@@ -146,12 +159,30 @@ function App() {
               reliable code. Committed to continuously improving my development
               skills through real world projects.
             </p>
-          </div>
+          </motion.div>
         </div>
       </header>
       <main className={styles.mainContainer}>
         <div className={styles.recentProjects}>
           <h2 className={styles.sectionTitle}>RECENT PROJECTS</h2>
+          <div className={styles.projectTipContainer}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{
+                scale: 1.04,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              viewport={{ once: true }}
+              className={styles.projectTip}
+            >
+              <img src="/icons/info-white.svg" alt="info icon" />
+              <p>Hover/tap the cards to learn more.</p>
+            </motion.div>
+          </div>
           <div className={styles.projectCardsContainer}>
             <Card
               title="M&M Construction"
@@ -195,24 +226,36 @@ function App() {
           <div className={styles.workHistoryContent}>
             <div className={styles.timelineCube}></div>
             <div className={styles.timelineCube}></div>
-            <div className={styles.workItem}>
+            <motion.div
+              initial={{ opacity: 0, translateX: 100 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              viewport={{ once: true }}
+              className={styles.workItem}
+            >
               <div className={styles.workDate}>2021 - CURRENT</div>
               <h6>M&M Construction Landscape and Masonry INC.</h6>
+              <p className={styles.jobTitle}>Fullstack Developer</p>
               <p className={`${styles.workDescription} ${styles.paragraph}`}>
                 Built a full-stack platform using Next.js, Express, Prisma, and
                 PostgreSQL that increased customer inquiries by 50% and
                 streamlined operations through automated travel-fee calculations
                 and an internal lead management dashboard.
               </p>
-            </div>
-            <div className={styles.workItem}>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, translateX: 100 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              viewport={{ once: true }}
+              className={styles.workItem}
+            >
               <div className={styles.workDate}>2018-2019</div>
               <h6>Carbonite</h6>
+              <p className={styles.jobTitle}>ServiceDesk Intern</p>
               <p className={`${styles.workDescription} ${styles.paragraph}`}>
                 Worked as a service desk intern. style companies intranet with
                 html and css
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className={styles.technologies}>

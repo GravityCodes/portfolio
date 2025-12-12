@@ -52,12 +52,11 @@
 }
 
 .navContent a {
+  text-decoration: none;
+  color: var(--clr-light);
+  background-color: var(--clr-surface-a10);
   padding: 8px;
   border-radius: var(--border-radius);
-}
-
-.navContent a:hover {
-  background-color: var(--clr-surface-a10);
 }
 
 .navContent a:last-child {
@@ -115,11 +114,6 @@
   width: 100%;
 }
 
-.nav a {
-  text-decoration: none;
-  color: var(--clr-light);
-}
-
 .headerContainer {
   display: flex;
   padding: 10%;
@@ -139,7 +133,7 @@
 .imageContainer {
   height: 200px;
   max-width: 200px;
-  border: 1px solid var(--clr-surface-a20);
+  border: 2px solid var(--clr-surface-a20);
   border-radius: var(--border-radius);
   flex: 1;
   position: relative;
@@ -189,7 +183,7 @@
   max-width: 600px;
   background-color: var(--clr-surface-a0);
   padding: 30px;
-  border: 1px solid var(--clr-surface-a20);
+  border: 2px solid var(--clr-surface-a20);
   border-radius: var(--border-radius);
 }
 
@@ -240,6 +234,33 @@
 
 /* Project */
 
+.projectTipContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.projectTip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  background-color: var(--clr-info-a0);
+  border: 2px solid var(--clr-info-a10);
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: bold;
+  width: fit-content;
+  text-align: center;
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+.projectTip img {
+  height: 15px;
+}
+
 .projectCardsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -253,6 +274,12 @@
 
 .workHistory {
   padding: var(--section-padding);
+}
+
+.jobTitle {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--clr-primary-a20);
 }
 
 .workHistoryContent {
@@ -287,12 +314,12 @@
 
 .timelineCube::after {
   content: "";
-  height: 100px;
+  height: 120px;
   width: 1px;
   position: absolute;
   transform: rotate(-45deg);
-  right: -35.5px;
-  top: 5px;
+  right: -42.5px;
+  top: 2px;
 }
 
 .timelineCube:first-child::after {
@@ -411,12 +438,12 @@
   }
   .timelineCube::after {
     content: "";
-    height: 130px;
+    height: 142px;
     width: 1px;
     position: absolute;
     transform: rotate(-45deg);
-    right: -45.5px;
-    top: 0px;
+    right: -49.5px;
+    top: -2px;
   }
 }
 

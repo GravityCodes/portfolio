@@ -26,7 +26,12 @@ const Card = ({
   onMouseLeaveFunc,
 }: CardProps) => {
   return (
-    <div className={styles.projectCardContainer}>
+    <motion.div
+      initial={{ opacity: 0, translateY: 100 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true }}
+      className={styles.projectCardContainer}
+    >
       <div className={styles.projectCard}>
         <div className={styles.front}>
           <div className={styles.projectImgContainer}>
@@ -74,7 +79,7 @@ const Card = ({
           </motion.a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

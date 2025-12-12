@@ -41,7 +41,13 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
 
   return (
     <div className={styles.formContainer}>
-      <form action={submitForm} className={styles.form}>
+      <motion.form
+        initial={{ opacity: 0, translateY: 100 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        viewport={{ once: true }}
+        action={submitForm}
+        className={styles.form}
+      >
         <div className={styles.inputField}>
           <label htmlFor="name">NAME</label>
           <input
@@ -137,7 +143,7 @@ const Form = ({ onMouseEnterFunc, onMouseLeaveFunc }: formProps) => {
             </a>
           </p>
         </div>
-      </form>
+      </motion.form>
     </div>
   );
 };
