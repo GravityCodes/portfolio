@@ -30,53 +30,52 @@ const Card = ({
       initial={{ opacity: 0, translateY: 100 }}
       whileInView={{ opacity: 1, translateY: 0 }}
       viewport={{ once: true }}
+      whileHover={{
+        scale: 1.05,
+      }}
+      transition={{
+        type: "spring",
+        duration: 0.5,
+      }}
       className={styles.projectCardContainer}
     >
       <div className={styles.projectCard}>
-        <div className={styles.front}>
-          <div className={styles.projectImgContainer}>
-            <img src={imgUrl} alt={imgAlt} />
+        <div className={styles.projectImgContainer}>
+          <div className={styles.linkContainer}>
+            <a
+              href={repo}
+              target="_blank"
+              onMouseEnter={onMouseEnterFunc}
+              onMouseLeave={onMouseLeaveFunc}
+            >
+              <img
+                src="/github-logo-white.svg"
+                alt="link to this website's repo"
+              />
+            </a>
+            <a
+              href={website}
+              target="_blank"
+              onMouseEnter={onMouseEnterFunc}
+              onMouseLeave={onMouseLeaveFunc}
+            >
+              <img src="/external-link-white.svg" alt="Link to this website" />
+            </a>
           </div>
-          <div className={styles.projectBottom}>
-            <div className={styles.projectTitle}>
-              <h4>{title}</h4>
-            </div>
-            <div className={styles.projectDescriptionContainer}>
-              <p className={styles.paragraph}>{paragraph}</p>
-            </div>
-            <div className={styles.projectTagsContainer}>
-              {tags.map((tag: string, index: number) => {
-                return <Tag key={index} text={tag} />;
-              })}
-            </div>
-          </div>
+          <img src={imgUrl} alt={imgAlt} />
         </div>
-        <div className={styles.back}>
-          <motion.a
-            whileHover={{
-              scale: 1.5,
-            }}
-            href={repo}
-            target="_blank"
-            onMouseEnter={onMouseEnterFunc}
-            onMouseLeave={onMouseLeaveFunc}
-          >
-            <img
-              src="/github-logo-white.svg"
-              alt="link to this website's repo"
-            />
-          </motion.a>
-          <motion.a
-            whileHover={{
-              scale: 1.5,
-            }}
-            href={website}
-            target="_blank"
-            onMouseEnter={onMouseEnterFunc}
-            onMouseLeave={onMouseLeaveFunc}
-          >
-            <img src="/external-link-white.svg" alt="Link to this website" />
-          </motion.a>
+        <div className={styles.projectBottom}>
+          <div className={styles.projectTitle}>
+            <h4>{title}</h4>
+          </div>
+          <div className={styles.projectDescriptionContainer}>
+            <p className={styles.paragraph}>{paragraph}</p>
+          </div>
+          <div className={styles.projectTagsContainer}>
+            {tags.map((tag: string, index: number) => {
+              return <Tag key={index} text={tag} />;
+            })}
+          </div>
         </div>
       </div>
     </motion.div>
