@@ -32,6 +32,10 @@ const Tool = ({ imgUrl, alt, color, title }: toolProps) => {
           opacity: 1,
           transition: { duration: 0.1 },
         }}
+        whileTap={{
+          opacity: 1,
+          transition: { duration: 0.1 },
+        }}
         transition={{ duration: 4 }}
       ></motion.div>
       <img src={imgUrl} alt={alt} />
