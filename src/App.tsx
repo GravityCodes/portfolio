@@ -200,7 +200,9 @@ function App() {
           <div className={styles.projectCardsContainer}>
             <Card
               title="M&M Construction"
-              paragraph="Developed the full-stack application (frontend and backend) and currently maintain it on Vercel and Railway."
+              paragraph="Developed the full-stack application (frontend and backend)
+                         Some noticeable features are a multi step form for better user experience, a leads organizing website for employees
+                         , and a client distance checker to charge them if they are farther than 10 miles."
               imgUrl="/MMConstruction.png"
               imgAlt="The website's main page"
               tags={["NEXTJS", "REACT", "EXPRESS", "PRISMA"]}
