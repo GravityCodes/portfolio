@@ -5,7 +5,7 @@
   justify-content: center;
 }
 .form {
-  border: 1px solid var(--clr-surface-a20);
+  border: 2px solid var(--clr-surface-a20);
   border-radius: var(--border-radius);
   padding: 20px;
   width: 100%;
@@ -39,6 +39,7 @@
   border-radius: var(--border-radius);
   color: var(--clr-light);
   resize: vertical;
+  padding: 10px;
   min-height: 150px;
   transition: outline 0.5s;
 }
