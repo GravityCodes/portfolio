@@ -9,6 +9,7 @@ function App() {
   const dotRef = useRef<HTMLDivElement>(null);
   const outerDotRef = useRef<HTMLDivElement>(null);
   const viewportPos = useRef({ x: 0, y: 0 });
+  const [isTouch, setIsTouch] = useState(false);
 
   // Motion
   const { scrollYProgress } = useScroll();
@@ -39,9 +40,19 @@ function App() {
     window.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("scroll", handleScroll);
 
+    //Check for touch screen
+    const check = () => {
+      setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+    }
+
+    check();
+
+    window.addEventListener("resize", check);
+
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("scroll", handleScroll);
+      window.addEventListener("resize", check);
     };
   }, []);
 
@@ -73,8 +84,10 @@ function App() {
           zIndex: 4,
         }}
       />
-      <div className={styles.cursor} ref={dotRef}></div>
-      <div className={styles.outerCursor} ref={outerDotRef}></div>
+      {!isTouch && <>
+        <div className={styles.cursor} ref={dotRef}></div>
+        <div className={styles.outerCursor} ref={outerDotRef}></div>
+      </>}
       <nav className={styles.nav}>
         <div className={styles.navContent}>
           <motion.a
@@ -121,7 +134,6 @@ function App() {
               src="/profile_Picture.jpg"
               alt="Picture of Johan Mesa"
             />
-            <div className={styles.frontBox}></div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, translateX: 100 }}

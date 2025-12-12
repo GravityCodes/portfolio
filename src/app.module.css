@@ -150,30 +150,10 @@
     box-shadow 3s;
 }
 
-.frontBox {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  background-color: var(--clr-primary-a10);
-  z-index: 1;
-  border-radius: var(--border-radius);
-  right: -10px;
-  bottom: -10px;
-  transition:
-    transform 0.5s ease-in-out,
-    border-radius 0.5s ease-in-out,
-    width 0.5s ease-in-out;
-}
-
 .imageContainer:hover > .backBox,
 .imageContainer:active > .backBox {
   transform: translate(0, 0);
   box-shadow: 0px 0px 30px var(--clr-primary-a20);
-}
-
-.imageContainer:hover > .frontBox {
-  border-radius: 40px;
-  transform: scale(0.4);
 }
 
 .summary {
