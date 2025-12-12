@@ -505,12 +505,16 @@
     padding: var(--section-padding);
   }
   .headerContent {
-    flex-direction: column;
+    display: block;
   }
 
+  .summary {
+    height: fit-content;
+  }
   .imageContainer {
     height: 200px;
     width: 200px;
+    margin: 0 auto 20px;
   }
   .technologiesContainer {
     grid-template-columns: 1fr;

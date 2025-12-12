@@ -43,7 +43,7 @@ function App() {
     //Check for touch screen
     const check = () => {
       setIsTouch(window.matchMedia("(pointer: coarse)").matches);
-    }
+    };
 
     check();
 
@@ -84,10 +84,12 @@ function App() {
           zIndex: 4,
         }}
       />
-      {!isTouch && <>
-        <div className={styles.cursor} ref={dotRef}></div>
-        <div className={styles.outerCursor} ref={outerDotRef}></div>
-      </>}
+      {!isTouch && (
+        <>
+          <div className={styles.cursor} ref={dotRef}></div>
+          <div className={styles.outerCursor} ref={outerDotRef}></div>
+        </>
+      )}
       <nav className={styles.nav}>
         <div className={styles.navContent}>
           <motion.a
