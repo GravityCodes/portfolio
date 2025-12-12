@@ -52,6 +52,7 @@
 
 .linkContainer a {
   height: 50px;
+  width: 50px;
   transform: scale(0);
   cursor: none;
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1.56);
