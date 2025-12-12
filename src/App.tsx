@@ -224,8 +224,28 @@ function App() {
         <div className={styles.workHistory}>
           <h2 className={styles.sectionTitle}>WORK HISTORY</h2>
           <div className={styles.workHistoryContent}>
-            <div className={styles.timelineCube}></div>
-            <div className={styles.timelineCube}></div>
+            <motion.div 
+              initial={{ rotate:360}}
+              whileInView={{ rotate: 45}}
+              viewport={{once: true}}
+              className={styles.timelineCube}></motion.div>
+            <motion.div 
+              initial={{opacity:0, scaleY: 0}}
+              whileInView={{opacity:1, scaleY: 1}}
+              style={{originY:0}}
+              viewport={{once: true}}
+              className={styles.timelineLine}></motion.div>
+            <motion.div
+              initial={{ rotate:360}}
+              whileInView={{ rotate: 45}}
+              viewport={{once: true}}
+              className={styles.timelineCube}></motion.div>
+            <motion.div 
+              initial={{opacity:0, scaleY: 0}}
+              whileInView={{opacity:1, scaleY: 1}}
+              style={{originY:0}}
+              viewport={{once: true}}
+              className={styles.timelineLine}></motion.div>
             <motion.div
               initial={{ opacity: 0, translateX: 100 }}
               whileInView={{ opacity: 1, translateX: 0 }}
