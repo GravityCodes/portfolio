@@ -161,6 +161,7 @@ function App() {
                 href="https://www.linkedin.com/in/johan-mesa/"
                 onMouseEnter={hoverEnter}
                 onMouseLeave={hoverLeave}
+                target="_blank"
               >
                 <img src="/linkedin-logo.svg" alt="Linkedin" />
               </motion.a>
